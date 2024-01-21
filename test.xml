@@ -1,0 +1,43 @@
+<mujoco> 
+    <option timestep="0.1"/>
+
+    <worldbody>
+        <light diffuse=".5 .5 .5" pos="0 0 3" dir="0 0 -1"/>
+        <geom name="floor" type="plane" size="2 2 0.1" rgba=".85 0.6 0.6 1"/>
+        <body>
+            <freejoint name="root"/>
+            <geom name="stem" pos="0 0 0.5" type="box" size=".02 .02 .5" rgba=".70 0.77 0.14 1"/>
+            <body name="pot" pos="0 0 0">
+                <geom name="pot" type="cylinder" size="0.3 0.2" rgba=".88 0.44 0.36 1"/>
+            </body>
+            <body name="center" pos="0 0 1">
+                <geom name="center" type="sphere" size="0.1" rgba=".99 0.75 0 1"/>
+            </body>    
+            <body name="petal1" pos="0 0.3 1">
+                <geom name="petal1" type="ellipsoid" size="0.2 0.3 0.1" rgba=".95 0.95 0.86 1"/>
+                <joint name="petal1hinge" pos="0 -0.15 0" axis="1 0 0" range="-5 5" limited="true"/>
+            </body>
+            <body name="petal2" pos="0 -0.3 1">
+                <geom name="petal2" type="ellipsoid" size="0.2 0.3 0.1" rgba=".95 0.95 0.86 1"/>
+                <joint name="petal2hinge" pos="0 0.15 0" axis="1 0 0" range="-5 5" limited="true"/>
+            </body>
+            <body name="petal3" pos="0.3 0 1">
+                <geom name="petal3" type="ellipsoid" size="0.3 0.2 0.1" rgba=".95 0.95 0.86 1"/>
+                <joint name="petal3hinge" pos="-0.15 0 0" axis="0 1 0" range="-5 5" limited="true"/>
+            </body>
+            <body name="petal4" pos="-0.3 0 1">
+                <geom name="petal4" type="ellipsoid" size="0.3 0.2 0.1" rgba=".95 0.95 0.86 1"/>
+                <joint name="petal4hinge" pos="0.15 0 0" axis="0 1 0" range="-5 5" limited="true"/>
+            </body>
+        </body>
+    </worldbody>
+
+    <actuator>
+        <motor name="petal1hinge" gear="50" joint="petal1hinge"/>
+        <motor name="petal2hinge" gear="50" joint="petal2hinge"/>
+        <motor name="petal3hinge" gear="50" joint="petal3hinge"/>
+        <motor name="petal4hinge" gear="50" joint="petal4hinge"/>
+    </actuator> 
+
+    
+</mujoco>

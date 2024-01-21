@@ -1,0 +1,6 @@
+Thu Jan 18 06:00:40 2024
+WARNING: mju_openResource: unknown file '~chair.xml'
+
+Thu Jan 18 06:01:35 2024
+WARNING: mju_openResource: unknown file '/Users/lixinran/Desktop/artificial_life/chair.xml'
+
